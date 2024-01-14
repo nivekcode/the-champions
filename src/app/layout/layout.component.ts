@@ -1,16 +1,21 @@
 import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   standalone: true,
   selector: 'app-layout',
   template: `
-      <mat-toolbar>
-          The champions
-      </mat-toolbar>
+      <nav>
+          <h1>The champions</h1>
+      </nav>
+      <div class="container">
+      <router-outlet/>
+      </div>
   `,
   imports: [
-    MatToolbarModule
+    MatToolbarModule,
+    RouterOutlet
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
